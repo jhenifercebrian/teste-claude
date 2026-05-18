@@ -31,10 +31,10 @@
         <span class="nav-icon">✅</span><span class="nav-label">Pendências</span>
       </button>
       <button class="nav-item" data-section="parques">
-        <span class="nav-icon">🎡</span><span class="nav-label">Parques</span>
+        <span class="nav-icon">🎡</span><span class="nav-label">Parques Orlando</span>
       </button>
       <button class="nav-item" data-section="wishlist">
-        <span class="nav-icon">💫</span><span class="nav-label">Wishlist</span>
+        <span class="nav-icon">💫</span><span class="nav-label">To Dos e Wishlist</span>
       </button>
     </nav>
     <div class="sidebar-footer">
@@ -115,19 +115,13 @@
               <span class="finance-total-label">Total Geral</span>
               <span class="finance-total-value" id="home-total">R$ 0,00</span>
             </div>
-            <div class="finance-per-person">
-              <div class="person-share">
-                <span class="person-name">👫 Jhenifer & Chorão</span>
-                <span class="person-amount" id="home-casal1">R$ 0,00</span>
-              </div>
-            </div>
             <button class="btn-link" data-section="financeiro">Ver detalhes →</button>
           </div>
         </div>
 
-        <!-- Próximas Pendências -->
+        <!-- Pendências -->
         <div class="card card-upcoming">
-          <div class="card-label">✦ Próximas Pendências</div>
+          <div class="card-label">✦ Pendências</div>
           <div class="upcoming-list" id="home-checklist-preview">
             <p class="empty-state">Nenhuma pendência cadastrada ainda.</p>
           </div>
@@ -136,7 +130,7 @@
 
         <!-- Viajantes -->
         <div class="card card-viajantes">
-          <div class="card-label">✦ Nossos Viajantes</div>
+          <div class="card-label">✦ Viajantes</div>
           <div class="viajantes-grid">
             <div class="viajante-card">
               <div class="viajante-avatar">J</div>
@@ -144,11 +138,11 @@
             </div>
             <div class="viajante-card">
               <div class="viajante-avatar">C</div>
-              <span>Chorão</span>
+              <span>Vivi</span>
             </div>
             <div class="viajante-card">
               <div class="viajante-avatar">V</div>
-              <span>Vivi</span>
+              <span>Chorão</span>
             </div>
             <div class="viajante-card">
               <div class="viajante-avatar">R</div>
@@ -174,7 +168,7 @@
     <section class="section" id="financeiro">
       <div class="section-header">
         <h1 class="section-title"><span class="title-ornament">✦</span> Controle Financeiro</h1>
-        <p class="section-sub">Gastos e divisão por pessoa</p>
+        <p class="section-sub">Gastos totais</p>
       </div>
 
       <div class="finance-top">
@@ -183,11 +177,6 @@
             <span class="fsc-label">Total Geral</span>
             <span class="fsc-value" id="fin-total">R$ 0,00</span>
           </div>
-          <div class="finance-stat-card">
-            <span class="fsc-label">Jhenifer & Chorão</span>
-            <span class="fsc-value" id="fin-casal1">R$ 0,00</span>
-          </div>
-        </div>
         <button class="btn-primary" id="btn-add-expense">+ Adicionar Gasto</button>
       </div>
 
@@ -195,11 +184,11 @@
       <div class="cat-filters" id="cat-filters">
         <button class="cat-btn active" data-cat="todos">Todos</button>
         <button class="cat-btn" data-cat="passagens">✈ Passagens</button>
-        <button class="cat-btn" data-cat="hospedagem">🏨 Hospedagem</button>
-        <button class="cat-btn" data-cat="parques">🎡 Parques</button>
+        <button class="cat-btn" data-cat="hospedagem">🏨 Hospedagens</button>
+        <button class="cat-btn" data-cat="parques">🎡 Parques Orlando</button>
         <button class="cat-btn" data-cat="alimentação">🍽 Alimentação</button>
         <button class="cat-btn" data-cat="compras">🛍 Compras</button>
-        <button class="cat-btn" data-cat="transporte">🚗 Transporte</button>
+        <button class="cat-btn" data-cat="transporte">🚗 Aluguel Carro</button>
         <button class="cat-btn" data-cat="seguros">🛡 Seguros</button>
         <button class="cat-btn" data-cat="extras">✨ Extras</button>
       </div>
@@ -213,7 +202,7 @@
     <section class="section" id="checklist">
       <div class="section-header">
         <h1 class="section-title"><span class="title-ornament">✦</span> Checklist de Pendências</h1>
-        <p class="section-sub">Tudo que precisa ser resolvido antes de viajar</p>
+        <p class="section-sub">Tudo que precisa ser resolvido antes da viagem</p>
       </div>
       <div class="checklist-header-row">
         <div class="checklist-progress-bar-wrap">
@@ -241,7 +230,7 @@
     <!-- ===== WISHLIST ===== -->
     <section class="section" id="wishlist">
       <div class="section-header">
-        <h1 class="section-title"><span class="title-ornament">✦</span> Wishlist & Inspirações</h1>
+        <h1 class="section-title"><span class="title-ornament">✦</span> Wishlist & To Dos</h1>
         <p class="section-sub">Restaurantes, compras e experiências dos sonhos</p>
       </div>
       <div class="wishlist-categories">
@@ -291,21 +280,9 @@
               <option value="extras">✨ Extras</option>
             </select>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Quem pagou?</label>
-            <select id="exp-payer">
-              <option value="todos">Todos (divisão igual)</option>
-              <option value="casal1">Jheni & Chorão</option>
-            </select>
-          </div>
-          <div class="form-group">
             <label>Data</label>
             <input type="date" id="exp-date" />
           </div>
-        </div>
-        <div class="form-group">
           <label>Observações</label>
           <textarea id="exp-obs" placeholder="Notas adicionais..."></textarea>
         </div>
@@ -342,10 +319,8 @@
             <label>Responsável</label>
             <select id="check-person">
               <option value="todos">Todos</option>
-              <option value="Jhenifer">Jhenifer</option>
+              <option value="Jhenifer">Jheni</option>
               <option value="Chorão">Chorão</option>
-              <option value="Vivi">Vivian</option>
-              <option value="Rafa">Rafael</option>
             </select>
           </div>
         </div>
@@ -423,7 +398,7 @@
   <div class="modal-overlay" id="modal-wish">
     <div class="modal">
       <div class="modal-header">
-        <h3 class="modal-title">Adicionar à Wishlist</h3>
+        <h3 class="modal-title">Adicionar à Wishlist e To Dos</h3>
         <button class="modal-close" data-modal="modal-wish">✕</button>
       </div>
       <div class="modal-body">

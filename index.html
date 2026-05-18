@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎄✨ Magic Trip Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">✦</div>
+      <span class="brand-name">Magic Trip</span>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-section="home">
+        <span class="nav-icon">🏠</span><span class="nav-label">Início</span>
+      </button>
+      <button class="nav-item" data-section="timeline">
+        <span class="nav-icon">🗓️</span><span class="nav-label">Roteiro</span>
+      </button>
+      <button class="nav-item" data-section="financeiro">
+        <span class="nav-icon">💰</span><span class="nav-label">Financeiro</span>
+      </button>
+      <button class="nav-item" data-section="checklist">
+        <span class="nav-icon">✅</span><span class="nav-label">Pendências</span>
+      </button>
+      <button class="nav-item" data-section="parques">
+        <span class="nav-icon">🎡</span><span class="nav-label">Parques</span>
+      </button>
+      <button class="nav-item" data-section="wishlist">
+        <span class="nav-icon">💫</span><span class="nav-label">Wishlist</span>
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-couples">
+        <span class="couple-tag">👫 Jhenifer & Chorão</span>
+        <span class="couple-tag">👫 Vivian & Rafael</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MOBILE HEADER -->
+  <header class="mobile-header">
+    <button class="hamburger" id="hamburger">☰</button>
+    <span class="mobile-brand">🎄 Magic Trip</span>
+    <span></span>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- ===== HOME ===== -->
+    <section class="section active" id="home">
+      <div class="section-header">
+        <h1 class="section-title"><span class="title-ornament">✦</span> Magic Trip Planner</h1>
+        <p class="section-sub">Nova York & Orlando · Dezembro 2026</p>
+      </div>
+
+      <div class="home-grid">
+        <!-- Countdown -->
+        <div class="card card-countdown">
+          <div class="card-label">✦ Contagem Regressiva</div>
+          <div class="countdown-display">
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-days">---</span>
+              <span class="countdown-unit-label">dias</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-hours">--</span>
+              <span class="countdown-unit-label">horas</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-mins">--</span>
+              <span class="countdown-unit-label">minutos</span>
+            </div>
+          </div>
+          <p class="countdown-dest">✈ Decolagem: 15 de Dezembro de 2026</p>
+        </div>
+
+        <!-- Destinos -->
+        <div class="card card-destinos">
+          <div class="card-label">✦ Destinos</div>
+          <div class="destinos-list">
+            <div class="destino-item">
+              <div class="destino-icon">🗽</div>
+              <div class="destino-info">
+                <strong>Nova York</strong>
+                <span>15/12 → 18/12 · 3 noites</span>
+              </div>
+            </div>
+            <div class="destino-divider">✦</div>
+            <div class="destino-item">
+              <div class="destino-icon">🎡</div>
+              <div class="destino-info">
+                <strong>Orlando</strong>
+                <span>18/12 → 27/12 · 9 noites</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumo Financeiro -->
+        <div class="card card-finance-summary">
+          <div class="card-label">✦ Resumo Financeiro</div>
+          <div class="finance-summary-content">
+            <div class="finance-total-display">
+              <span class="finance-total-label">Total Geral</span>
+              <span class="finance-total-value" id="home-total">R$ 0,00</span>
+            </div>
+            <div class="finance-per-person">
+              <div class="person-share">
+                <span class="person-name">👫 Jhenifer & Chorão</span>
+                <span class="person-amount" id="home-casal1">R$ 0,00</span>
+              </div>
+              <div class="person-share">
+                <span class="person-name">👫 Vivian & Rafael</span>
+                <span class="person-amount" id="home-casal2">R$ 0,00</span>
+              </div>
+            </div>
+            <button class="btn-link" data-section="financeiro">Ver detalhes →</button>
+          </div>
+        </div>
+
+        <!-- Próximas Pendências -->
+        <div class="card card-upcoming">
+          <div class="card-label">✦ Próximas Pendências</div>
+          <div class="upcoming-list" id="home-checklist-preview">
+            <p class="empty-state">Nenhuma pendência cadastrada ainda.</p>
+          </div>
+          <button class="btn-link" data-section="checklist">Ver todas →</button>
+        </div>
+
+        <!-- Viajantes -->
+        <div class="card card-viajantes">
+          <div class="card-label">✦ Nossos Viajantes</div>
+          <div class="viajantes-grid">
+            <div class="viajante-card">
+              <div class="viajante-avatar">J</div>
+              <span>Jhenifer</span>
+            </div>
+            <div class="viajante-card">
+              <div class="viajante-avatar">C</div>
+              <span>Chorão</span>
+            </div>
+            <div class="viajante-card">
+              <div class="viajante-avatar">V</div>
+              <span>Vivian</span>
+            </div>
+            <div class="viajante-card">
+              <div class="viajante-avatar">R</div>
+              <span>Rafael</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="section" id="timeline">
+      <div class="section-header">
+        <h1 class="section-title"><span class="title-ornament">✦</span> Roteiro da Viagem</h1>
+        <p class="section-sub">Cronograma dia a dia</p>
+      </div>
+      <div class="timeline-container" id="timeline-container">
+        <!-- generated by JS -->
+      </div>
+    </section>
+
+    <!-- ===== FINANCEIRO ===== -->
+    <section class="section" id="financeiro">
+      <div class="section-header">
+        <h1 class="section-title"><span class="title-ornament">✦</span> Controle Financeiro</h1>
+        <p class="section-sub">Gastos e divisão por pessoa</p>
+      </div>
+
+      <div class="finance-top">
+        <div class="finance-totals-row">
+          <div class="finance-stat-card">
+            <span class="fsc-label">Total Geral</span>
+            <span class="fsc-value" id="fin-total">R$ 0,00</span>
+          </div>
+          <div class="finance-stat-card">
+            <span class="fsc-label">Jhenifer & Chorão</span>
+            <span class="fsc-value" id="fin-casal1">R$ 0,00</span>
+          </div>
+          <div class="finance-stat-card">
+            <span class="fsc-label">Vivian & Rafael</span>
+            <span class="fsc-value" id="fin-casal2">R$ 0,00</span>
+          </div>
+        </div>
+        <button class="btn-primary" id="btn-add-expense">+ Adicionar Gasto</button>
+      </div>
+
+      <!-- Categoria Filter -->
+      <div class="cat-filters" id="cat-filters">
+        <button class="cat-btn active" data-cat="todos">Todos</button>
+        <button class="cat-btn" data-cat="passagens">✈ Passagens</button>
+        <button class="cat-btn" data-cat="hospedagem">🏨 Hospedagem</button>
+        <button class="cat-btn" data-cat="parques">🎡 Parques</button>
+        <button class="cat-btn" data-cat="alimentação">🍽 Alimentação</button>
+        <button class="cat-btn" data-cat="compras">🛍 Compras</button>
+        <button class="cat-btn" data-cat="transporte">🚗 Transporte</button>
+        <button class="cat-btn" data-cat="seguros">🛡 Seguros</button>
+        <button class="cat-btn" data-cat="extras">✨ Extras</button>
+      </div>
+
+      <div class="expense-list" id="expense-list">
+        <p class="empty-state">Nenhum gasto cadastrado ainda.</p>
+      </div>
+    </section>
+
+    <!-- ===== CHECKLIST ===== -->
+    <section class="section" id="checklist">
+      <div class="section-header">
+        <h1 class="section-title"><span class="title-ornament">✦</span> Checklist de Pendências</h1>
+        <p class="section-sub">Tudo que precisa ser resolvido antes de viajar</p>
+      </div>
+      <div class="checklist-header-row">
+        <div class="checklist-progress-bar-wrap">
+          <div class="checklist-progress-bar" id="checklist-bar"></div>
+        </div>
+        <span class="checklist-progress-text" id="checklist-progress-text">0 / 0 concluídas</span>
+        <button class="btn-primary" id="btn-add-check">+ Adicionar</button>
+      </div>
+      <div class="checklist-list" id="checklist-list">
+        <p class="empty-state">Nenhuma pendência cadastrada.</p>
+      </div>
+    </section>
+
+    <!-- ===== PARQUES ===== -->
+    <section class="section" id="parques">
+      <div class="section-header">
+        <h1 class="section-title"><span class="title-ornament">✦</span> Parques & Atrações</h1>
+        <p class="section-sub">Planejamento dos parques em Orlando</p>
+      </div>
+      <div class="parques-grid" id="parques-grid">
+        <!-- generated by JS -->
+      </div>
+    </section>
+
+    <!-- ===== WISHLIST ===== -->
+    <section class="section" id="wishlist">
+      <div class="section-header">
+        <h1 class="section-title"><span class="title-ornament">✦</span> Wishlist & Inspirações</h1>
+        <p class="section-sub">Restaurantes, compras e experiências dos sonhos</p>
+      </div>
+      <div class="wishlist-categories">
+        <button class="wish-cat-btn active" data-wcat="restaurantes">🍽 Restaurantes</button>
+        <button class="wish-cat-btn" data-wcat="compras">🛍 Compras</button>
+        <button class="wish-cat-btn" data-wcat="experiências">✨ Experiências</button>
+      </div>
+      <div class="wishlist-header-row">
+        <button class="btn-primary" id="btn-add-wish">+ Adicionar</button>
+      </div>
+      <div class="wishlist-grid" id="wishlist-grid">
+        <p class="empty-state">Nenhum item na wishlist ainda.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== MODALS ===== -->
+
+  <!-- Modal Gasto -->
+  <div class="modal-overlay" id="modal-expense">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-expense-title">Adicionar Gasto</h3>
+        <button class="modal-close" data-modal="modal-expense">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Descrição</label>
+          <input type="text" id="exp-desc" placeholder="Ex: Passagem GRU → JFK" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Valor (R$)</label>
+            <input type="number" id="exp-valor" placeholder="0,00" step="0.01" />
+          </div>
+          <div class="form-group">
+            <label>Categoria</label>
+            <select id="exp-cat">
+              <option value="passagens">✈ Passagens</option>
+              <option value="hospedagem">🏨 Hospedagem</option>
+              <option value="parques">🎡 Parques</option>
+              <option value="alimentação">🍽 Alimentação</option>
+              <option value="compras">🛍 Compras</option>
+              <option value="transporte">🚗 Transporte</option>
+              <option value="seguros">🛡 Seguros</option>
+              <option value="extras">✨ Extras</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Quem pagou?</label>
+            <select id="exp-payer">
+              <option value="todos">Todos (divisão igual)</option>
+              <option value="casal1">Jhenifer & Chorão</option>
+              <option value="casal2">Vivian & Rafael</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Data</label>
+            <input type="date" id="exp-date" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Observações</label>
+          <textarea id="exp-obs" placeholder="Notas adicionais..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" data-modal="modal-expense">Cancelar</button>
+        <button class="btn-primary" id="btn-save-expense">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Checklist -->
+  <div class="modal-overlay" id="modal-check">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-check-title">Adicionar Pendência</h3>
+        <button class="modal-close" data-modal="modal-check">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Tarefa</label>
+          <input type="text" id="check-text" placeholder="Ex: Comprar chip internacional" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Prioridade</label>
+            <select id="check-priority">
+              <option value="alta">🔴 Alta</option>
+              <option value="media">🟡 Média</option>
+              <option value="baixa">🟢 Baixa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Responsável</label>
+            <select id="check-person">
+              <option value="todos">Todos</option>
+              <option value="Jhenifer">Jhenifer</option>
+              <option value="Chorão">Chorão</option>
+              <option value="Vivian">Vivian</option>
+              <option value="Rafael">Rafael</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Observações</label>
+          <textarea id="check-obs" placeholder="Detalhes..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" data-modal="modal-check">Cancelar</button>
+        <button class="btn-primary" id="btn-save-check">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Parque Atividade -->
+  <div class="modal-overlay" id="modal-park-activity">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-park-title">Adicionar Atividade</h3>
+        <button class="modal-close" data-modal="modal-park-activity">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="park-id-input" />
+        <div class="form-group">
+          <label>Atividade / Atração</label>
+          <input type="text" id="park-act-text" placeholder="Ex: Space Mountain" />
+        </div>
+        <div class="form-group">
+          <label>Horário sugerido</label>
+          <input type="time" id="park-act-time" />
+        </div>
+        <div class="form-group">
+          <label>Observações</label>
+          <textarea id="park-act-obs" placeholder="Dicas, filas, recomendações..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" data-modal="modal-park-activity">Cancelar</button>
+        <button class="btn-primary" id="btn-save-park-act">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Timeline -->
+  <div class="modal-overlay" id="modal-timeline">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-timeline-title">Editar Dia</h3>
+        <button class="modal-close" data-modal="modal-timeline">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="tl-day-index" />
+        <div class="form-group">
+          <label>Atividade Principal</label>
+          <input type="text" id="tl-activity" placeholder="Ex: Central Park, Times Square..." />
+        </div>
+        <div class="form-group">
+          <label>Restaurante / Refeição</label>
+          <input type="text" id="tl-restaurant" placeholder="Ex: Dinner at Tavern on the Green" />
+        </div>
+        <div class="form-group">
+          <label>Notas do dia</label>
+          <textarea id="tl-notes" placeholder="Observações importantes para esse dia..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" data-modal="modal-timeline">Cancelar</button>
+        <button class="btn-primary" id="btn-save-tl">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Wishlist -->
+  <div class="modal-overlay" id="modal-wish">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Adicionar à Wishlist</h3>
+        <button class="modal-close" data-modal="modal-wish">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Nome / Título</label>
+          <input type="text" id="wish-name" placeholder="Ex: The Plaza Hotel Afternoon Tea" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Categoria</label>
+            <select id="wish-cat">
+              <option value="restaurantes">🍽 Restaurantes</option>
+              <option value="compras">🛍 Compras</option>
+              <option value="experiências">✨ Experiências</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Cidade</label>
+            <select id="wish-city">
+              <option value="Nova York">Nova York</option>
+              <option value="Orlando">Orlando</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Link / URL (opcional)</label>
+          <input type="url" id="wish-url" placeholder="https://..." />
+        </div>
+        <div class="form-group">
+          <label>Notas</label>
+          <textarea id="wish-notes" placeholder="Dicas, horários, preços..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" data-modal="modal-wish">Cancelar</button>
+        <button class="btn-primary" id="btn-save-wish">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay sidebar mobile -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
